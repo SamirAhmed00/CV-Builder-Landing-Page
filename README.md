@@ -2,6 +2,11 @@
 
 A premium, **fully bilingual (English / Arabic)** CV builder platform. ATS-friendly resume templates designed for software engineers, designers, marketers, and sales professionals.
 
+
+## Live Demo
+
+**[View CV Builder Live →](https://samirahmed00.github.io/CV-Builder-Landing-Page/)**
+
 This is a **frontend-only** portfolio project — no backend, no build step. Open `index.html` in a browser (or serve the folder) and everything works.
 
 ---
