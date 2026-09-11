@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2563EB" />
+  <title>Templates — CV Builder</title>
+  <meta name="description" content="Browse ATS-tested CV templates built for software engineers, designers, marketers, and sales professionals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563EB'/%3E%3Cpath d='M9 9h14v3H9zM9 14h14v3H9zM9 19h9v3H9z' fill='white'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="CV Builder home">
+        <span class="nav-logo-mark" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+        </span>
+        <span>CV Builder</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="templates.html" class="nav-link" data-i18n="nav.templates">Templates</a>
+        <a href="index.html#categories" class="nav-link" data-i18n="nav.categories">Categories</a>
+        <a href="index.html#analyzer" class="nav-link" data-i18n="nav.jobMatching">Job matching</a>
+        <a href="index.html#pricing" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="langToggle" class="lang-toggle" type="button" aria-label="Switch language">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="lang-label">EN</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <span class="icon-moon" data-icon="moon"></span>
+          <span class="icon-sun" data-icon="sun"></span>
+        </button>
+        <a href="#login" class="btn btn-ghost btn-sm" data-i18n="nav.login">Log in</a>
+        <a href="builder.html" class="btn btn-primary btn-sm" data-i18n="nav.getStarted">Get started</a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-icon="menu-icon"></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Page header -->
+  <section class="section-sm" style="border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div style="max-width:720px;">
+        <span class="eyebrow" data-i18n="templatesPage.eyebrow">Template library</span>
+        <h1 style="font-size:clamp(2rem, 4vw, 2.75rem);margin-top:8px;" data-i18n="templatesPage.title">Pick the right template for your career</h1>
+        <p class="lead" style="margin-top:12px;" data-i18n="templatesPage.lead">12 ATS-tested templates. Filter by career track, then preview any layout to see the details.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters + Grid -->
+  <section class="section">
+    <div class="container">
+      <div class="flex items-center justify-between gap-3" style="flex-wrap:wrap;margin-bottom:var(--s-6);">
+        <div class="filter-bar" id="filterBar" style="margin:0;">
+          <!-- populated by templates.js -->
+        </div>
+        <div style="position:relative;min-width:240px;">
+          <input id="templateSearch" class="input" type="search" placeholder="Search templates, roles, styles..." style="padding-left:36px;" />
+          <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text-subtle);" data-icon="eye"></span>
+        </div>
+      </div>
+
+      <div class="grid grid-3" id="templatesGrid">
+        <!-- populated by templates.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="previewModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <h3 id="modalTitle">Template</h3>
+          <div class="flex items-center gap-3" style="margin-top:4px;font-size:0.875rem;color:var(--text-muted);">
+            <span id="modalStyle" class="badge">Style</span>
+            <span id="modalCategory" class="badge">Category</span>
+            <span id="modalATS" class="badge badge-success badge-dot">ATS</span>
+          </div>
+        </div>
+        <button class="modal-close" aria-label="Close" data-icon="x"></button>
+      </div>
+      <div class="modal-body">
+        <div id="modalPreview" style="background:#F4F4F5;border-radius:var(--r-md);padding:var(--s-4);display:flex;justify-content:center;">
+          <!-- populated by templates.js -->
+        </div>
+        <p id="modalDesc" style="margin-top:var(--s-5);color:var(--text-muted);"></p>
+        <div style="margin-top:var(--s-4);">
+          <div class="text-subtle" style="font-size:0.75rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;" data-i18n="templatesPage.bestFor">Best for</div>
+          <div id="modalRoles" class="flex gap-2" style="flex-wrap:wrap;"></div>
+        </div>
+      </div>
+      <div class="modal-header" style="border-top:1px solid var(--border);border-bottom:0;">
+        <a class="btn btn-secondary" href="templates.html" data-i18n="templatesPage.keepBrowsing">Keep browsing</a>
+        <a class="btn btn-primary" id="modalUse" href="builder.html">
+          <span data-i18n="templatesPage.useThis">Use this template</span>
+          <span data-icon="arrow-right"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="nav-logo" style="margin-bottom:var(--s-3);">
+            <span class="nav-logo-mark" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+            </span>
+            <span>CV Builder</span>
+          </a>
+          <p style="font-size:0.9375rem;max-width:280px;" data-i18n="footer.tagline">A premium resume builder for serious job seekers. ATS-friendly templates, designed for real hiring workflows.</p>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer.product">Product</h5>
+          <a href="templates.html" data-i18n="nav.templates">Templates</a>
+          <a href="index.html#categories" data-i18n="nav.categories">Categories</a>
+          <a href="index.html#analyzer" data-i18n="nav.jobMatching">Job matching</a>
+          <a href="index.html#pricing" data-i18n="nav.pricing">Pricing</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer.company">Company</h5>
+          <a href="index.html#about" data-i18n="footer.about">About</a>
+          <a href="index.html#careers" data-i18n="footer.careers">Careers</a>
+          <a href="index.html#contact" data-i18n="footer.contact">Contact</a>
+          <a href="https://github.com" target="_blank" rel="noopener" data-i18n="footer.github">GitHub</a>
+        </div>
+        <div class="footer-col">
+          <h5 data-i18n="footer.resources">Resources</h5>
+          <a href="index.html#guides" data-i18n="footer.guides">Resume guides</a>
+          <a href="index.html#blog" data-i18n="footer.blog">Blog</a>
+          <a href="index.html#changelog" data-i18n="footer.changelog">Changelog</a>
+          <a href="index.html#support" data-i18n="footer.support">Support</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 CV Builder. <span data-i18n="footer.copyright">All rights reserved.</span></span>
+        <div class="flex gap-4">
+          <a href="index.html#privacy" class="text-subtle" data-i18n="footer.privacy">Privacy</a>
+          <a href="index.html#terms" class="text-subtle" data-i18n="footer.terms">Terms</a>
+          <a href="index.html#cookies" class="text-subtle" data-i18n="footer.cookies">Cookies</a>
+        </div>
+      </div>
+      <div class="footer-credit">
+        <span>Built by <strong>Samir Ahmed</strong></span>
+        <div class="footer-credit-links">
+          <a href="https://github.com/SamirAhmed00" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.57.1.78-.25.78-.55v-2.1c-3.2.7-3.88-1.36-3.88-1.36-.52-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18.92-.26 1.91-.38 2.9-.39.98.01 1.97.13 2.9.39 2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .3.21.66.79.55A10.51 10.51 0 0 0 23.5 12c0-6.27-5.23-11.5-11.5-11.5z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/samir-ahmed00/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/templates.js"></script>
+</body>
+</html>

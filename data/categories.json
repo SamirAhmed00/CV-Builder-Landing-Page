@@ -1,0 +1,56 @@
+{
+  "categories": [
+    {
+      "id": "software",
+      "name": { "en": "Software Engineering", "ar": "هندسة البرمجيات" },
+      "icon": "code",
+      "description": {
+        "en": "Backend, frontend, mobile, and infrastructure roles.",
+        "ar": "أدوار الباك إند، الفرونت إند، تطوير الموبايل، والبنية التحتية."
+      },
+      "roles": {
+        "en": ["Backend Developer", "Frontend Developer", "Full Stack Developer", "Mobile Developer", "DevOps Engineer"],
+        "ar": ["مطوّر باك إند", "مطوّر فرونت إند", "مطوّر Full Stack", "مطوّر تطبيقات الجوال", "مهندس DevOps"]
+      }
+    },
+    {
+      "id": "design",
+      "name": { "en": "Design", "ar": "التصميم" },
+      "icon": "palette",
+      "description": {
+        "en": "Product, UI/UX, and graphic design roles.",
+        "ar": "أدوار تصميم المنتج وتجربة المستخدم والجرافيك."
+      },
+      "roles": {
+        "en": ["UI/UX Designer", "Product Designer", "Graphic Designer"],
+        "ar": ["مصمم UI/UX", "مصمم منتج", "مصمم جرافيك"]
+      }
+    },
+    {
+      "id": "marketing",
+      "name": { "en": "Marketing", "ar": "التسويق" },
+      "icon": "megaphone",
+      "description": {
+        "en": "Performance, digital, and media buying roles.",
+        "ar": "أدوار التسويق الرقمي والإعلام والأداء."
+      },
+      "roles": {
+        "en": ["Media Buyer", "Performance Marketing Specialist", "Digital Marketing Specialist"],
+        "ar": ["مشتري إعلانات", "أخصائي تسويق أداء", "أخصائي تسويق رقمي"]
+      }
+    },
+    {
+      "id": "sales",
+      "name": { "en": "Sales", "ar": "المبيعات" },
+      "icon": "trending-up",
+      "description": {
+        "en": "Revenue, partnerships, and account roles.",
+        "ar": "أدوار تطوير الأعمال والمبيعات وإدارة الحسابات."
+      },
+      "roles": {
+        "en": ["Sales Representative", "Business Development Representative", "Account Executive"],
+        "ar": ["مندوب مبيعات", "مندوب تطوير أعمال", "مدير حساب"]
+      }
+    }
+  ]
+}

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#2563EB" />
+  <title>Builder — CV Builder</title>
+  <meta name="description" content="Build your CV with a live preview. ATS-friendly templates, real-time editing, instant download." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cairo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/rtl.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232563EB'/%3E%3Cpath d='M9 9h14v3H9zM9 14h14v3H9zM9 19h9v3H9z' fill='white'/%3E%3C/svg%3E" />
+  <style>
+    @media print {
+      .navbar, .builder-form, .builder-toolbar, .footer { display: none !important; }
+      body { background: white !important; }
+      .builder-shell { display: block !important; }
+      .builder-preview { padding: 0 !important; background: white !important; }
+      .cv-paper { box-shadow: none !important; max-width: none !important; width: 100% !important; padding: 24px !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="CV Builder home">
+        <span class="nav-logo-mark" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+        </span>
+        <span>CV Builder</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" class="nav-link" data-i18n="nav.home">Home</a>
+        <a href="templates.html" class="nav-link" data-i18n="nav.templates">Templates</a>
+        <a href="index.html#categories" class="nav-link" data-i18n="nav.categories">Categories</a>
+        <a href="index.html#analyzer" class="nav-link" data-i18n="nav.jobMatching">Job matching</a>
+        <a href="index.html#pricing" class="nav-link" data-i18n="nav.pricing">Pricing</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="langToggle" class="lang-toggle" type="button" aria-label="Switch language">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+          <span class="lang-label">EN</span>
+        </button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          <span class="icon-moon" data-icon="moon"></span>
+          <span class="icon-sun" data-icon="sun"></span>
+        </button>
+        <a href="index.html" class="btn btn-ghost btn-sm" data-i18n="nav.exit">Exit</a>
+        <button id="downloadBtn" class="btn btn-primary btn-sm">
+          <span data-icon="download"></span>
+          <span data-i18n="builder.download">Download</span>
+        </button>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" data-icon="menu-icon"></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Builder shell -->
+  <main class="builder-shell">
+    <!-- Left: form -->
+    <section class="builder-form">
+      <!-- Template selector -->
+      <div style="margin-bottom:var(--s-6);">
+        <div class="flex items-center justify-between" style="margin-bottom:10px;">
+          <h4 style="font-size:0.875rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-subtle);" data-i18n="builder.chooseTemplate">Choose template</h4>
+          <a class="text-subtle" href="templates.html" style="font-size:0.8125rem;text-decoration:underline;" data-i18n="builder.seeAll">See all</a>
+        </div>
+        <div class="template-selector" id="templateSelector">
+          <!-- populated by builder.js -->
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="builder-tabs" role="tablist">
+        <button class="builder-tab active" data-tab="personal" role="tab" data-i18n="builder.tabs.personal">Personal</button>
+        <button class="builder-tab" data-tab="experience" role="tab" data-i18n="builder.tabs.experience">Experience</button>
+        <button class="builder-tab" data-tab="education" role="tab" data-i18n="builder.tabs.education">Education</button>
+        <button class="builder-tab" data-tab="extras" role="tab" data-i18n="builder.tabs.extras">Skills &amp; Projects</button>
+      </div>
+
+      <!-- Personal -->
+      <div class="builder-section active" id="tab-personal">
+        <h3 style="margin-bottom:var(--s-4);" data-i18n="builder.personal.title">Personal information</h3>
+        <div class="row-2">
+          <div class="form-group">
+            <label class="form-label" for="firstName" data-i18n="builder.personal.firstName">First name</label>
+            <input class="input" id="firstName" type="text" autocomplete="given-name" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lastName" data-i18n="builder.personal.lastName">Last name</label>
+            <input class="input" id="lastName" type="text" autocomplete="family-name" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="role" data-i18n="builder.personal.role">Target role / headline</label>
+          <input class="input" id="role" type="text" data-i18n-placeholder="builder.personal.rolePh" placeholder="e.g. Senior Backend Engineer" />
+        </div>
+        <div class="row-2">
+          <div class="form-group">
+            <label class="form-label" for="email" data-i18n="builder.personal.email">Email</label>
+            <input class="input" id="email" type="email" autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone" data-i18n="builder.personal.phone">Phone</label>
+            <input class="input" id="phone" type="tel" autocomplete="tel" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="location" data-i18n="builder.personal.location">Location</label>
+          <input class="input" id="location" type="text" data-i18n-placeholder="builder.personal.locationPh" placeholder="City, Country" />
+        </div>
+        <div class="row-2">
+          <div class="form-group">
+            <label class="form-label" for="linkedin" data-i18n="builder.personal.linkedin">LinkedIn</label>
+            <input class="input" id="linkedin" type="text" data-i18n-placeholder="builder.personal.linkedinPh" placeholder="linkedin.com/in/..." />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="website" data-i18n="builder.personal.website">Website / portfolio</label>
+            <input class="input" id="website" type="text" data-i18n-placeholder="builder.personal.websitePh" placeholder="yourdomain.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="summary" data-i18n="builder.personal.summary">Professional summary</label>
+          <textarea class="textarea" id="summary" rows="5" data-i18n-placeholder="builder.personal.summaryPh" placeholder="2-4 sentences. Lead with what you do, who you do it for, and the value you bring."></textarea>
+          <span class="form-hint" data-i18n="builder.personal.hint">Keep it tight. Recruiters spend 6-8 seconds on the first scan.</span>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="builder-section" id="tab-experience">
+        <div class="flex items-center justify-between" style="margin-bottom:var(--s-4);">
+          <h3 data-i18n="builder.experience.title">Experience</h3>
+          <button class="btn btn-secondary btn-sm" id="addExperience">
+            <span data-icon="plus"></span>
+            <span data-i18n="builder.experience.add">Add experience</span>
+          </button>
+        </div>
+        <div class="dynamic-list" id="experienceList">
+          <!-- populated -->
+        </div>
+      </div>
+
+      <!-- Education -->
+      <div class="builder-section" id="tab-education">
+        <div class="flex items-center justify-between" style="margin-bottom:var(--s-4);">
+          <h3 data-i18n="builder.education.title">Education</h3>
+          <button class="btn btn-secondary btn-sm" id="addEducation">
+            <span data-icon="plus"></span>
+            <span data-i18n="builder.education.add">Add education</span>
+          </button>
+        </div>
+        <div class="dynamic-list" id="educationList">
+          <!-- populated -->
+        </div>
+      </div>
+
+      <!-- Skills & Projects -->
+      <div class="builder-section" id="tab-extras">
+        <h3 style="margin-bottom:var(--s-3);" data-i18n="builder.extras.skillsTitle">Skills</h3>
+        <p class="text-muted" style="font-size:0.875rem;margin-bottom:var(--s-3);" data-i18n="builder.extras.skillsHelp">Type a skill and press Enter or comma. Backspace removes the last.</p>
+        <input class="input" id="skillsInput" type="text" data-i18n-placeholder="builder.extras.skillsPh" placeholder="Type a skill, then Enter" />
+        <div id="skillsChips" class="skill-tags" style="margin-top:var(--s-3);"></div>
+
+        <div class="divider"></div>
+
+        <div class="flex items-center justify-between" style="margin-bottom:var(--s-4);">
+          <h3 data-i18n="builder.extras.projectsTitle">Projects</h3>
+          <button class="btn btn-secondary btn-sm" id="addProject">
+            <span data-icon="plus"></span>
+            <span data-i18n="builder.extras.addProject">Add project</span>
+          </button>
+        </div>
+        <div class="dynamic-list" id="projectsList">
+          <!-- populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Right: preview -->
+    <section class="builder-preview">
+      <div class="builder-toolbar" style="width:100%;max-width:720px;justify-content:space-between;">
+        <div class="flex items-center gap-2">
+          <span class="badge badge-success badge-dot" data-i18n="builder.livePreview">Live preview</span>
+          <span class="text-subtle" style="font-size:0.8125rem;" data-i18n="builder.savedAuto">Your changes are saved automatically.</span>
+        </div>
+        <div class="flex gap-2">
+          <button class="btn btn-ghost btn-sm" id="printBtn" data-i18n-title="builder.printPdf" title="Print to PDF">
+            <span data-icon="upload"></span>
+            <span data-i18n="builder.printPdf">Print to PDF</span>
+          </button>
+          <button class="btn btn-ghost btn-sm" id="resetBtn" data-i18n-title="builder.reset" title="Reset">
+            <span data-icon="sparkles"></span>
+            <span data-i18n="builder.reset">Reset</span>
+          </button>
+          <button class="btn btn-primary btn-sm" id="downloadBtn2" onclick="document.getElementById('downloadBtn').click()">
+            <span data-icon="download"></span>
+            <span data-i18n="builder.download">Download</span>
+          </button>
+        </div>
+      </div>
+      <article class="cv-paper" id="cvPaper" data-template="modern-professional">
+        <!-- populated by builder.js -->
+      </article>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/builder.js"></script>
+</body>
+</html>

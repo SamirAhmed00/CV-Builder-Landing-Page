@@ -1,0 +1,208 @@
+{
+  "templates": [
+    {
+      "id": "tech-resume",
+      "name": { "en": "Tech Resume", "ar": "السيرة التقنية" },
+      "category": "software",
+      "style": { "en": "Technical", "ar": "تقني" },
+      "description": {
+        "en": "A clean, skills-forward layout for engineers. Prioritizes stack, projects, and measurable impact over decorative visuals.",
+        "ar": "قالب نظيف يركز على المهارات الهندسية. يُبرز التقنيات والمشاريع والأثر القابل للقياس."
+      },
+      "roles": {
+        "en": ["Backend Developer", "Full Stack Developer", "DevOps Engineer"],
+        "ar": ["مطوّر باك إند", "مطوّر Full Stack", "مهندس DevOps"]
+      },
+      "atsScore": 96,
+      "color": "#2563EB",
+      "accent": "#0F172A"
+    },
+    {
+      "id": "modern-professional",
+      "name": { "en": "Modern Professional", "ar": "الاحترافي العصري" },
+      "category": "software",
+      "style": { "en": "Professional", "ar": "احترافي" },
+      "description": {
+        "en": "A balanced layout that works for product, frontend, and cross-functional roles. Two-column structure, calm typography.",
+        "ar": "قالب متوازن يناسب أدوار الفرونت إند والمنتج والمجالات متعددة التخصصات. عمودان، طباعة هادئة."
+      },
+      "roles": {
+        "en": ["Frontend Developer", "Product Designer", "Marketing Specialist"],
+        "ar": ["مطوّر فرونت إند", "مصمم منتج", "أخصائي تسويق"]
+      },
+      "atsScore": 92,
+      "color": "#0F172A",
+      "accent": "#2563EB"
+    },
+    {
+      "id": "engineering-pro",
+      "name": { "en": "Engineering Pro", "ar": "المهندس المحترف" },
+      "category": "software",
+      "style": { "en": "Technical", "ar": "تقني" },
+      "description": {
+        "en": "Built for senior engineers. Highlights systems work, scale, and architectural decisions.",
+        "ar": "مصمم للمهندسين الكبار. يُبرز العمل على الأنظمة الكبيرة وقرارات البنية."
+      },
+      "roles": {
+        "en": ["Backend Developer", "Full Stack Developer", "DevOps Engineer"],
+        "ar": ["مطوّر باك إند", "مطوّر Full Stack", "مهندس DevOps"]
+      },
+      "atsScore": 95,
+      "color": "#0EA5E9",
+      "accent": "#0F172A"
+    },
+    {
+      "id": "design-portfolio",
+      "name": { "en": "Design Portfolio", "ar": "ملف أعمال المصمم" },
+      "category": "design",
+      "style": { "en": "Creative", "ar": "إبداعي" },
+      "description": {
+        "en": "A minimal, type-driven layout for designers. Project-first structure with a short profile up top.",
+        "ar": "قالب بسيط يقوده الخط الطباعي للمصممين. هيكل يقدّم المشاريع أولًا ثم نبذة قصيرة."
+      },
+      "roles": {
+        "en": ["UI/UX Designer", "Product Designer", "Graphic Designer"],
+        "ar": ["مصمم UI/UX", "مصمم منتج", "مصمم جرافيك"]
+      },
+      "atsScore": 88,
+      "color": "#7C3AED",
+      "accent": "#0F172A"
+    },
+    {
+      "id": "ux-specialist",
+      "name": { "en": "UX Specialist", "ar": "متخصص UX" },
+      "category": "design",
+      "style": { "en": "Specialized", "ar": "متخصص" },
+      "description": {
+        "en": "Process-led layout that surfaces research, prototyping, and outcomes in a scannable format.",
+        "ar": "قالب يقوده العملية يبرز البحث والنماذج الأولية والنتائج بشكل قابل للمسح السريع."
+      },
+      "roles": {
+        "en": ["UI/UX Designer", "Product Designer"],
+        "ar": ["مصمم UI/UX", "مصمم منتج"]
+      },
+      "atsScore": 90,
+      "color": "#EC4899",
+      "accent": "#0F172A"
+    },
+    {
+      "id": "marketing-edge",
+      "name": { "en": "Marketing Edge", "ar": "حافة التسويق" },
+      "category": "marketing",
+      "style": { "en": "Results-driven", "ar": "موجّه بالنتائج" },
+      "description": {
+        "en": "Metrics-forward. Every role entry anchors to KPIs: spend, ROAS, conversion, CAC.",
+        "ar": "قالب يقدّم الأرقام أولًا. كل خبرة مرتبطة بمؤشرات أداء: الإنفاق، ROAS، التحويل، CAC."
+      },
+      "roles": {
+        "en": ["Media Buyer", "Performance Marketing Specialist", "Digital Marketing Specialist"],
+        "ar": ["مشتري إعلانات", "أخصائي تسويق أداء", "أخصائي تسويق رقمي"]
+      },
+      "atsScore": 93,
+      "color": "#F59E0B",
+      "accent": "#0F172A"
+    },
+    {
+      "id": "growth-marketer",
+      "name": { "en": "Growth Marketer", "ar": "مسوّق النمو" },
+      "category": "marketing",
+      "style": { "en": "Results-driven", "ar": "موجّه بالنتائج" },
+      "description": {
+        "en": "Built for digital and growth marketers. Channels, experiments, and funnel impact at the top.",
+        "ar": "مصمم لمسوّقي النمو الرقمي. القنوات والتجارب وتأثير القمع في المقدمة."
+      },
+      "roles": {
+        "en": ["Digital Marketing Specialist", "Performance Marketing Specialist"],
+        "ar": ["أخصائي تسويق رقمي", "أخصائي تسويق أداء"]
+      },
+      "atsScore": 91,
+      "color": "#10B981",
+      "accent": "#0F172A"
+    },
+    {
+      "id": "sales-executor",
+      "name": { "en": "Sales Executive", "ar": "المندوب التنفيذي" },
+      "category": "sales",
+      "style": { "en": "Executive", "ar": "تنفيذي" },
+      "description": {
+        "en": "Quota-first layout. Surfaces attainment, pipeline, and deal sizes without filler.",
+        "ar": "قالب يقدّم الحصة أولًا. يُبرز الإنجاز والصفقات وأحجامها بدون حشو."
+      },
+      "roles": {
+        "en": ["Sales Representative", "Account Executive"],
+        "ar": ["مندوب مبيعات", "مدير حساب"]
+      },
+      "atsScore": 94,
+      "color": "#DC2626",
+      "accent": "#0F172A"
+    },
+    {
+      "id": "bdr-pro",
+      "name": { "en": "BDR Pro", "ar": "محترف BDR" },
+      "category": "sales",
+      "style": { "en": "Specialized", "ar": "متخصص" },
+      "description": {
+        "en": "Built for outbound and business development. Activity, meetings booked, and conversion are first-class.",
+        "ar": "مصمم للمبيعات الصادرة وتطوير الأعمال. النشاط والاجتماعات المحجوزة والتحويل في المقدمة."
+      },
+      "roles": {
+        "en": ["Business Development Representative", "Sales Representative"],
+        "ar": ["مندوب تطوير أعمال", "مندوب مبيعات"]
+      },
+      "atsScore": 92,
+      "color": "#6366F1",
+      "accent": "#0F172A"
+    },
+    {
+      "id": "executive-classic",
+      "name": { "en": "Executive Classic", "ar": "التنفيذي الكلاسيكي" },
+      "category": "sales",
+      "style": { "en": "Executive", "ar": "تنفيذي" },
+      "description": {
+        "en": "A conservative, boardroom-ready layout for senior sales and account leadership.",
+        "ar": "قالب محافظ جاهز لمجلس الإدارة لقادة المبيعات والحسابات الكبار."
+      },
+      "roles": {
+        "en": ["Account Executive", "Sales Representative"],
+        "ar": ["مدير حساب", "مندوب مبيعات"]
+      },
+      "atsScore": 96,
+      "color": "#0F172A",
+      "accent": "#2563EB"
+    },
+    {
+      "id": "minimal-clean",
+      "name": { "en": "Minimal Clean", "ar": "البسيط النظيف" },
+      "category": "software",
+      "style": { "en": "Minimal", "ar": "بسيط" },
+      "description": {
+        "en": "A universally safe layout. Generous whitespace, single column, ATS-perfect.",
+        "ar": "قالب آمن عالميًا. مساحات بيضاء واسعة، عمود واحد، مثالي لأنظمة ATS."
+      },
+      "roles": {
+        "en": ["Frontend Developer", "UI/UX Designer", "Digital Marketing Specialist", "Sales Representative"],
+        "ar": ["مطوّر فرونت إند", "مصمم UI/UX", "أخصائي تسويق رقمي", "مندوب مبيعات"]
+      },
+      "atsScore": 98,
+      "color": "#475569",
+      "accent": "#0F172A"
+    },
+    {
+      "id": "mobile-dev",
+      "name": { "en": "Mobile Dev", "ar": "مطوّر الجوال" },
+      "category": "software",
+      "style": { "en": "Technical", "ar": "تقني" },
+      "description": {
+        "en": "Tailored for iOS and Android engineers. Platform-specific skills called out clearly.",
+        "ar": "مصمم لمهندسي iOS و Android. يبرز المهارات الخاصة بكل منصة بوضوح."
+      },
+      "roles": {
+        "en": ["Mobile Developer", "Full Stack Developer"],
+        "ar": ["مطوّر تطبيقات الجوال", "مطوّر Full Stack"]
+      },
+      "atsScore": 93,
+      "color": "#22C55E",
+      "accent": "#0F172A"
+    }
+  ]
+}

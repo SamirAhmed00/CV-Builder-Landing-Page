@@ -1,0 +1,39 @@
+{
+  "examples": [
+    {
+      "title": { "en": "Backend Developer", "ar": "مطوّر باك إند" },
+      "description": {
+        "en": "We are looking for a Backend Developer with experience in ASP.NET Core, SQL Server, REST APIs, and Entity Framework. You will design and build scalable services, collaborate with frontend engineers, and own deployments to Azure. Experience with Docker, CI/CD pipelines, and microservices is a plus.",
+        "ar": "نبحث عن مطوّر باك إند لديه خبرة في ASP.NET Core و SQL Server و REST APIs و Entity Framework. ستكون مسؤولًا عن تصميم وبناء خدمات قابلة للتوسع، والتعاون مع مهندسي الفرونت إند، وامتلاك عمليات النشر على Azure. يُعتبر وجود خبرة بـ Docker وخطوط CI/CD والخدمات المصغّرة ميزة إضافية."
+      }
+    },
+    {
+      "title": { "en": "Frontend Developer", "ar": "مطوّر فرونت إند" },
+      "description": {
+        "en": "Senior Frontend Developer needed. Strong React, TypeScript, and modern CSS skills required. You will build accessible, performant interfaces, contribute to our design system, and partner with product designers. Experience with Next.js, testing libraries, and design tokens is a plus.",
+        "ar": "نحتاج مطوّر فرونت إند أول. مطلوب خبرة قوية في React و TypeScript و CSS الحديث. ستقوم ببناء واجهات متاحة وسريعة الأداء، والمساهمة في نظام التصميم، والعمل جنبًا إلى جنب مع مصممي المنتج. يُعتبر وجود خبرة بـ Next.js ومكتبات الاختبار و Design Tokens ميزة إضافية."
+      }
+    },
+    {
+      "title": { "en": "UI/UX Designer", "ar": "مصمم UI/UX" },
+      "description": {
+        "en": "Product designer to lead end-to-end design for our SaaS platform. Strong Figma, user research, prototyping, and design systems experience required. You will partner with engineering, run usability tests, and ship pixel-perfect interfaces.",
+        "ar": "مصمم منتج يقود التصميم من البداية للنهاية لمنصة SaaS الخاصة بنا. مطلوب خبرة قوية في Figma وبحث المستخدم والنماذج الأولية وأنظمة التصميم. ستعمل مع الهندسة، وتجري اختبارات قابلية الاستخدام، وتطلق واجهات متقنة."
+      }
+    },
+    {
+      "title": { "en": "Media Buyer", "ar": "مشتري إعلانات" },
+      "description": {
+        "en": "Performance Media Buyer with experience running Meta and Google Ads at scale. Strong analytical skills, ROAS optimization, and creative testing required. Experience with attribution, pixel setup, and feed-based shopping campaigns preferred.",
+        "ar": "مشتري إعلانات أداء بخبرة في إدارة حملات Meta و Google Ads على نطاق واسع. مطلوب مهارات تحليلية قوية، وتحسين ROAS، واختبار المحتوى الإبداعي. يُعتبر وجود خبرة في الإسناد وإعداد البكسل وحملات Shopping ميزة."
+      }
+    },
+    {
+      "title": { "en": "Account Executive", "ar": "مدير حساب" },
+      "description": {
+        "en": "Senior Account Executive to close mid-market SaaS deals. 3+ years of B2B sales experience, consistent quota attainment, and experience with MEDDIC or similar required. Salesforce, Outreach, and forecasting experience a plus.",
+        "ar": "مدير حساب أول لإغلاق صفقات SaaS في سوق Mid-Market. خبرة لا تقل عن 3 سنوات في مبيعات B2B، تحقيق مستمر للحصص، وخبرة بمنهجية MEDDIC أو ما شابه. تُعتبر خبرة Salesforce و Outreach والتنبؤ ميزة."
+      }
+    }
+  ]
+}

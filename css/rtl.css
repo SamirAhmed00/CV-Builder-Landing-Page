@@ -1,0 +1,75 @@
+/* ==========================================================================
+   CV Builder — RTL Overrides
+   Loaded on top of main.css / components.css for [dir="rtl"] pages.
+   ========================================================================== */
+
+[dir="rtl"] h1, [dir="rtl"] h2, [dir="rtl"] h3,
+[dir="rtl"] h4, [dir="rtl"] h5 {
+  letter-spacing: 0;
+}
+[dir="rtl"] .cv-name, [dir="rtl"] .cv-item-title, [dir="rtl"] .cv-item-meta {
+  letter-spacing: 0;
+}
+
+/* Flip directional icons (arrows) */
+[dir="rtl"] [data-icon="arrow-right"] svg,
+[dir="rtl"] [data-icon="arrow-left"] svg {
+  transform: scaleX(-1);
+}
+
+/* Step connector line: symmetric — no flip needed */
+[dir="rtl"] .steps::before { left: 12.5%; right: 12.5%; }
+
+/* Hero trust: avatar group stacks on the leading side in RTL = right side. */
+[dir="rtl"] .hero-trust .avatar-group span { margin-left: 0; margin-right: -8px; }
+[dir="rtl"] .hero-trust .avatar-group span:first-child { margin-right: 0; }
+
+/* Builder: form on right, preview on left in RTL.
+   In Arabic, make the form NARROWER (360px) so the CV preview gets more space
+   and the paper formatting is fully visible.
+   In RTL grid, the FIRST column is on the RIGHT side, so:
+   - Column 1 (right) = form = 360px
+   - Column 2 (left)  = preview = 1fr */
+[dir="rtl"] .builder-shell { grid-template-columns: 360px 1fr; }
+[dir="rtl"] .builder-form {
+  border-right: 0;
+  border-left: 1px solid var(--border);
+  padding: var(--s-6);
+}
+[dir="rtl"] .builder-form h3 { font-size: 1.125rem; }
+[dir="rtl"] .builder-form .form-label { font-size: 0.75rem; }
+[dir="rtl"] .builder-form .input,
+[dir="rtl"] .builder-form .textarea { font-size: 0.875rem; padding: 8px 10px; }
+[dir="rtl"] .builder-form .row-2 { gap: 8px; }
+
+/* CV paper two-column: sidebar on right in RTL */
+[dir="rtl"] .cv-paper.two-col { grid-template-columns: 2fr 1fr; }
+
+/* CV paper in RTL: slightly wider to use the extra preview space */
+[dir="rtl"] .cv-paper { max-width: 780px; }
+
+/* CV item head: title on right, date on left in RTL */
+[dir="rtl"] .cv-paper .cv-item-head { flex-direction: row-reverse; }
+[dir="rtl"] .cv-paper .cv-contact { flex-direction: row-reverse; justify-content: flex-end; }
+[dir="rtl"] .cv-paper .cv-item-desc ul { padding-left: 0; padding-right: 16px; }
+
+/* Skill tags: remove button on leading edge */
+[dir="rtl"] .skill-tag { flex-direction: row-reverse; }
+
+/* Search input icon: right side in RTL */
+[dir="rtl"] .filter-bar + .relative > [data-icon],
+[dir="rtl"] .relative > [data-icon] {
+  left: auto;
+  right: 12px;
+}
+
+/* Form selects: the chevron arrow was for LTR; in RTL keep the same SVG, the
+   background-position: right 12px reads naturally on the leading edge. */
+[dir="rtl"] .select { background-position: left 12px center; padding-right: 12px; padding-left: 36px; }
+
+/* Modal header: keep "x" close on the leading side (right in LTR, left in RTL) */
+[dir="rtl"] .modal-header { flex-direction: row-reverse; }
+
+/* Footer columns: order flips automatically */
+
+/* Category card: title/text alignment naturally flows with text-align: start (right in RTL) */
